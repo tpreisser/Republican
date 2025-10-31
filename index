@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Consulting Pitch Deck - Intelligence That Wins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #701A17 0%, #1E1E1E 50%, #701A17 100%);
+            color: #FDF9F3;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Trajan Pro', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+            animation: circuitPulse 3s ease-in-out infinite;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #C59D52;
+            letter-spacing: 0.1em;
+            margin-top: 1rem;
+        }
+
+        /* Slide Container */
+        .slide-container {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(112, 26, 23, 0.6) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            min-height: 500px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(197, 157, 82, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.7s ease-in-out;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            color: #C59D52;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes circuitPulse {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(197, 157, 82, 0.4)); }
+            50% { filter: drop-shadow(0 0 30px rgba(197, 157, 82, 0.7)); }
+        }
+
+        .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; opacity: 0; }
+        .animate-slideUp { animation: slideUp 0.5s ease-out forwards; opacity: 0; }
+        .animate-slideInLeft { animation: slideInLeft 0.6s ease-out forwards; opacity: 0; }
+        .animate-slideInRight { animation: slideInRight 0.6s ease-out forwards; opacity: 0; }
+        .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; opacity: 0; }
+
+        /* Cover Slide */
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            text-align: center;
+        }
+
+        .cover-logo {
+            width: 320px;
+            margin-bottom: 2rem;
+        }
+
+        .cover-tagline {
+            font-size: 3rem;
+            color: #C59D52;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .cover-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            position: relative;
+        }
+
+        .comparison-box {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .comparison-box.traditional {
+            background: linear-gradient(135deg, rgba(60, 20, 20, 0.6) 0%, rgba(30, 20, 20, 0.8) 100%);
+            border-radius: 12px 0 0 12px;
+            border-right: 3px solid rgba(197, 157, 82, 0.8);
+            margin-right: -1px;
+            z-index: 10;
+        }
+
+        .comparison-box.ours {
+            background: linear-gradient(135deg, rgba(139, 98, 66, 0.4) 0%, rgba(80, 60, 45, 0.6) 100%);
+            border-radius: 0 12px 12px 0;
+            margin-left: -1px;
+            z-index: 20;
+        }
+
+        .comparison-box h3 {
+            font-size: 1.5rem;
+            color: #C59D52;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-box ul {
+            list-style: none;
+        }
+
+        .comparison-box li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .check-icon.traditional {
+            background: rgba(112, 26, 23, 0.6);
+            border: 2px solid #701A17;
+            color: #701A17;
+        }
+
+        .check-icon.ours {
+            background: linear-gradient(135deg, #C59D52 0%, rgba(197, 157, 82, 0.7) 100%);
+            color: #1E1E1E;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(197, 157, 82, 0.4);
+        }
+
+        /* Three Prongs */
+        .prongs-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .prongs-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .prong-card {
+            flex: 1;
+            max-width: 280px;
+            aspect-ratio: 0.85;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 3px solid rgba(197, 157, 82, 0.7);
+            box-shadow: 0 10px 40px rgba(197, 157, 82, 0.3);
+        }
+
+        .prong-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .prong-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #C59D52 0%, #FDF9F3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .prong-title {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #FDF9F3;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .prong-subtitle {
+            font-size: 0.7rem;
+            opacity: 0.75;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(60, 40, 30, 0.4);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid rgba(197, 157, 82, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h4 {
+            color: #C59D52;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1.1rem;
+            border: 2px solid;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-button:hover::before {
+            left: 100%;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-button.prev {
+            background: linear-gradient(135deg, #701A17 0%, rgba(112, 26, 23, 0.8) 100%);
+            border-color: rgba(197, 157, 82, 0.6);
+            color: #FDF9F3;
+            clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+        }
+
+        .nav-button.next {
+            background: linear-gradient(135deg, #C59D52 0%, rgba(197, 157, 82, 0.8) 100%);
+            border-color: #C59D52;
+            color: #1E1E1E;
+            clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+        }
+
+        .slide-counter {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.25rem;
+            background: linear-gradient(90deg, rgba(197, 157, 82, 0.4) 0%, rgba(112, 26, 23, 0.4) 100%);
+            border: 2px solid rgba(197, 157, 82, 0.7);
+            box-shadow: 0 4px 16px rgba(197, 157, 82, 0.3);
+        }
+
+        /* Indicators */
+        .indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .indicator {
+            height: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 12px;
+            background: rgba(253, 249, 243, 0.3);
+        }
+
+        .indicator.active {
+            width: 48px;
+            background: linear-gradient(90deg, #C59D52 0%, #701A17 100%);
+            box-shadow: 0 0 12px rgba(197, 157, 82, 0.8);
+            border: 1px solid #C59D52;
+        }
+
+        .indicator:not(.active):hover {
+            background: rgba(253, 249, 243, 0.5);
+        }
+
+        /* Source Citation */
+        .source {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            font-style: italic;
+            margin-top: 1.5rem;
+            text-align: right;
+        }
+
+        .source.center {
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid,
+            .grid-2,
+            .prongs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-container {
+                padding: 2rem;
+            }
+
+            .slide-title {
+                font-size: 1.75rem;
+            }
+
+            .nav-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .opacity-75 { opacity: 0.75; }
+        .opacity-85 { opacity: 0.85; }
+        .opacity-90 { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://i.ibb.co/nNfZHZc3/Untitled-design-2.png" alt="Logo" class="logo">
+            <p class="tagline font-serif">Tradition Meets Technology</p>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slide-container">
+            <!-- Slide 0: Cover -->
+            <div class="slide active" data-slide="0">
+                <div class="cover-content">
+                    <img src="https://i.ibb.co/nNfZHZc3/Untitled-design-2.png" alt="Logo" class="cover-logo animate-scaleIn">
+                    <h2 class="cover-tagline font-serif animate-slideUp" style="animation-delay: 0.3s">Intelligence That Wins</h2>
+                    <p class="cover-subtitle animate-slideUp" style="animation-delay: 0.5s">AI-Powered Campaign Management & Fundraising for Kansas Republicans</p>
+                </div>
+            </div>
+
+            <!-- Slide 1: Comparison -->
+            <div class="slide" data-slide="1">
+                <h2 class="slide-title font-serif animate-fadeIn">Traditional Consulting vs. Our Approach</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-box traditional animate-slideInLeft">
+                        <h3 class="font-serif">Traditional</h3>
+                        <ul>
+                            <li><div class="check-icon traditional">✗</div><span class="opacity-90">Eastern-based firms</span></li>
+                            <li><div class="check-icon traditional">✗</div><span class="opacity-90">Manual research</span></li>
+                            <li><div class="check-icon traditional">✗</div><span class="opacity-90">Generic strategies</span></li>
+                            <li><div class="check-icon traditional">✗</div><span class="opacity-90">High travel costs</span></li>
+                            <li><div class="check-icon traditional">✗</div><span class="opacity-90">Limited availability</span></li>
+                            <li><div class="check-icon traditional">✗</div><span class="opacity-90">Multiple clients per race</span></li>
+                        </ul>
+                    </div>
+                    <div class="comparison-box ours animate-slideInRight">
+                        <h3 class="font-serif">Our Innovation</h3>
+                        <ul>
+                            <li><div class="check-icon ours">✓</div><span>Central Kansas base</span></li>
+                            <li><div class="check-icon ours">✓</div><span>AI-powered intelligence</span></li>
+                            <li><div class="check-icon ours">✓</div><span>Hyper-local strategies</span></li>
+                            <li><div class="check-icon ours">✓</div><span>Zero travel markup</span></li>
+                            <li><div class="check-icon ours">✓</div><span>Dedicated focus</span></li>
+                            <li><div class="check-icon ours">✓</div><span>ONE candidate per race</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="source">Source: Competitive analysis of Kansas political consulting landscape, 2024</p>
+            </div>
+
+            <!-- Slide 2: Three Prongs -->
+            <div class="slide" data-slide="2">
+                <div class="prongs-container">
+                    <h2 class="slide-title font-serif text-center mb-8 animate-fadeIn">The Three-Prong Service Model</h2>
+                    <div class="prongs-grid">
+                        <div class="prong-card animate-scaleIn" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.4) 0%, rgba(80, 60, 45, 0.5) 100%); animation-delay: 0s;">
+                            <div class="prong-icon">👤</div>
+                            <div class="prong-number">1</div>
+                            <h4 class="prong-title font-serif">Full-Service Campaign Management</h4>
+                            <p class="prong-subtitle">End-to-End Operations</p>
+                        </div>
+                        <div class="prong-card animate-scaleIn" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.35) 0%, rgba(80, 60, 45, 0.45) 100%); animation-delay: 0.15s;">
+                            <div class="prong-icon">⚡</div>
+                            <div class="prong-number">2</div>
+                            <h4 class="prong-title font-serif">AI-Powered Fundraising</h4>
+                            <p class="prong-subtitle">Data-Driven Donor Intelligence</p>
+                        </div>
+                        <div class="prong-card animate-scaleIn" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.4) 100%); animation-delay: 0.3s;">
+                            <div class="prong-icon">🎯</div>
+                            <div class="prong-number">3</div>
+                            <h4 class="prong-title font-serif">Strategic Subcontracting</h4>
+                            <p class="prong-subtitle">Regional Infrastructure</p>
+                        </div>
+                    </div>
+                    <p class="source center">Integrated service framework designed for 2026 Kansas election cycle</p>
+                </div>
+            </div>
+
+            <!-- Placeholder slides for 3-12 -->
+            <div class="slide" data-slide="3">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 4 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="4">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 5 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="5">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 6 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="6">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 7 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="7">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 8 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="8">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 9 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="9">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 10 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="10">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 11 - Additional content in development</p>
+            </div>
+
+            <div class="slide" data-slide="11">
+                <h2 class="slide-title font-serif">Content Coming Soon</h2>
+                <p style="font-size: 1.5rem; opacity: 0.75;">Slide 12 - Additional content in development</p>
+            </div>
+
+            <!-- Slide 12: Closing -->
+            <div class="slide" data-slide="12">
+                <div class="cover-content">
+                    <img src="https://i.ibb.co/nNfZHZc3/Untitled-design-2.png" alt="Logo" style="width: 200px; margin-bottom: 2rem;" class="animate-scaleIn">
+                    <h3 class="font-serif animate-fadeIn" style="font-size: 3rem; color: #C59D52; margin-bottom: 2rem;">Ready to Win in 2026?</h3>
+                    <div class="grid-2" style="width: 100%; margin-bottom: 2rem;">
+                        <div class="card" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.2) 100%);">
+                            <p class="opacity-90">✓ Three integrated service prongs</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.2) 100%);">
+                            <p class="opacity-90">✓ AI-powered fundraising that works</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.2) 100%);">
+                            <p class="opacity-90">✓ Rapid statewide deployment</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.2) 100%);">
+                            <p class="opacity-90">✓ Your race is our only focus</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.2) 100%);">
+                            <p class="opacity-90">✓ Technology advantage</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(139, 98, 66, 0.3) 0%, rgba(80, 60, 45, 0.2) 100%);">
+                            <p class="opacity-90">✓ Performance-based pricing</p>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; border-radius: 0.75rem; width: 100%; border: 2px solid rgba(197, 157, 82, 0.6); background: rgba(60, 40, 30, 0.5);">
+                        <p style="font-size: 1.5rem; color: #C59D52; margin-bottom: 0.5rem;" class="font-serif">Kansas Roots. Data Precision.</p>
+                        <p class="opacity-75">Contact us to schedule a consultation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button prev" onclick="previousSlide()">
+                <span>←</span>
+                <span>PREVIOUS</span>
+            </button>
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">13</span>
+            </div>
+            <button class="nav-button next" onclick="nextSlide()">
+                <span>NEXT</span>
+                <span>→</span>
+            </button>
+        </div>
+
+        <!-- Indicators -->
+        <div class="indicators" id="indicators"></div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        // Initialize indicators
+        const indicatorsContainer = document.getElementById('indicators');
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update indicators
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, index) => {
+                indicator.classList.remove('active');
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                }
+            });
+
+            // Update counter
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlide();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Initialize
+        document.getElementById('total-slides').textContent = totalSlides;
+    </script>
+</body>
+</html>
