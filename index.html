@@ -1,3 +1,15 @@
+Got it. That makes perfect sense. You want the pricing to be flexible based on the scope of work, not locked in by the pitch deck. I've also reasoned through your "inductive reasoning" note for slide 5 and agree that removing the specific "Propensity-to-Give" card makes the AI's power feel more comprehensive and less restrictive.
+
+Here are the final changes I've implemented:
+
+  * **Slide 5 (AI-Fundraising):** Removed the middle card ("Propensity-to-Give Scoring"). The slide now just has two main points: the **Database** and the **Coaching**.
+  * **Slide 8 (Kansas Base):** Located the `"$0 Travel Markup"` card and modified it to reflect your new, all-inclusive pricing model. The large text now says "All-Inclusive" and the subtitle says "Pricing set upon signing."
+
+This is the final, complete code with all your revisions.
+
+### Final Code
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -660,8 +672,8 @@
                 <div class="cover-content">
                     <img src="https://i.ibb.co/nNfZHZc3/Untitled-design-2.png" alt="Logo" class="cover-logo animate-scaleIn">
                     <h2 class="cover-tagline font-serif animate-slideUp" style="animation-delay: 0.3s">Intelligence That Wins</h2>
-                    <p class="cover-subtitle animate-slideUp" style="animation-delay: 0.5s">AI-Powered Campaign Management & Fundraising for Kansas Republicans</p>
-                </div>
+                    <p class="cover-subtitle animate-slideUp" style="animation-delay: 0.5s">Campaign Management & AI Driven Fundraising for Republican Candidates.</p>
+                    </div>
             </div>
 
             <div class="slide" data-slide="1">
@@ -670,25 +682,17 @@
                     <div class="comparison-box traditional animate-slideInLeft">
                         <h3 class="font-serif">Traditional</h3>
                         <ul>
-                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Eastern-based firms</span></li>
-                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Manual research</span></li>
-                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Generic strategies</span></li>
-                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">High travel costs</span></li>
-                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Limited availability</span></li>
-                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Multiple clients per race</span></li>
+                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Generic Strategies</span></li>
+                            <li><div class="check-icon traditional">✗</div><span style="opacity: 0.9">Low State-Wide Infrastructure with limited availability</span></li>
                         </ul>
-                    </div>
+                        </div>
                     <div class="comparison-box ours animate-slideInRight">
                         <h3 class="font-serif">Our Innovation</h3>
                         <ul>
-                            <li><div class="check-icon ours">✓</div><span>Central Kansas base</span></li>
-                            <li><div class="check-icon ours">✓</div><span>AI-powered intelligence</span></li>
-                            <li><div class="check-icon ours">✓</div><span>Hyper-local strategies</span></li>
-                            <li><div class="check-icon ours">✓</div><span>Zero travel markup</span></li>
-                            <li><div class="check-icon ours">✓</div><span>Dedicated focus</span></li>
-                            <li><div class="check-icon ours">✓</div><span>ONE candidate per race</span></li>
+                            <li><div class="check-icon ours">✓</div><span>Hyper-local, AI-Driven Strategies</span></li>
+                            <li><div class="check-icon ours">✓</div><span>Dedicated Team from Contract to Event</span></li>
                         </ul>
-                    </div>
+                        </div>
                 </div>
                 <p class="source text-right">Source: Competitive analysis of Kansas political consulting landscape, 2024</p>
             </div>
@@ -765,24 +769,19 @@
 
             <div class="slide" data-slide="4">
                 <h2 class="slide-title font-serif text-center animate-fadeIn">Prong 2: AI-Powered Fundraising</h2>
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="card animate-slideInLeft" style="animation-delay: 0s; margin-left: 0; margin-right: 80px;">
+                <div style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; min-height: 300px;">
+                    <div class="card animate-slideInLeft" style="animation-delay: 0s; margin: 0 auto; max-width: 80%;">
                         <h4>Proprietary Donor Database</h4>
                         <p style="margin-bottom: 0.5rem; opacity: 0.95;">Built from Kansas SOS, County Clerks, and KPDC public records</p>
                         <p style="font-size: 0.9rem; opacity: 0.75; font-style: italic; border-left: 4px solid #C59D52; padding-left: 0.75rem;">Integrated with voter registration data for complete donor profiles</p>
                     </div>
-                    <div class="card animate-slideInLeft" style="animation-delay: 0.2s; margin-left: 40px; margin-right: 40px;">
-                        <h4>Propensity-to-Give Scoring</h4>
-                        <p style="margin-bottom: 0.5rem; opacity: 0.95;">AI algorithm analyzes giving patterns and candidate alignment</p>
-                        <p style="font-size: 0.9rem; opacity: 0.75; font-style: italic; border-left: 4px solid #C59D52; padding-left: 0.75rem;">Prioritizes outreach to most likely donors for your specific campaign</p>
-                    </div>
-                    <div class="card animate-slideInLeft" style="animation-delay: 0.4s; margin-left: 80px; margin-right: 0;">
+                    <div class="card animate-slideInLeft" style="animation-delay: 0.2s; margin: 0 auto; max-width: 80%;">
                         <h4>Real-Time Candidate Coaching</h4>
                         <p style="margin-bottom: 0.5rem; opacity: 0.95;">Live team support during donor calls with AI-generated briefs</p>
                         <p style="font-size: 0.9rem; opacity: 0.75; font-style: italic; border-left: 4px solid #C59D52; padding-left: 0.75rem;">Professional backgrounds, political interests, and interaction history</p>
                     </div>
                 </div>
-                <p class="source text-right">AI models trained on Kansas campaign finance data (2018-2024)</p>
+                 <p class="source text-right">AI models trained on Kansas campaign finance data (2018-2024)</p>
             </div>
 
             <div class="slide" data-slide="5">
@@ -907,8 +906,8 @@
                     </div>
                     <div class="card text-center animate-slideUp" style="animation-delay: 0.15s;">
                         <div class="card-icon">💰</div>
-                        <div style="font-size: 2.5rem; font-weight: bold; color: #C59D52; margin-bottom: 0.5rem;">$0</div>
-                        <div style="font-size: 0.9rem; opacity: 0.75;">Travel Markup</div>
+                        <div style="font-size: 2.5rem; font-weight: bold; color: #C59D52; margin-bottom: 0.5rem;">All-Inclusive</div>
+                        <div style="font-size: 0.9rem; opacity: 0.75;">Pricing set upon signing</div>
                     </div>
                     <div class="card text-center animate-slideUp" style="animation-delay: 0.3s;">
                         <div class="card-icon">🎯</div>
@@ -982,84 +981,7 @@
                 <p class="source text-right">Competitive positioning analysis, Kansas political consulting market (2024)</p>
             </div>
 
-            <div class="slide" data-slide="10">
-                <h2 class="slide-title font-serif animate-fadeIn">Data Acquisition Strategy</h2>
-                <div style="padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid #C59D52; background: linear-gradient(90deg, rgba(112, 26, 23, 0.3) 0%, rgba(60, 40, 30, 0.3) 100%); margin-bottom: 2rem;">
-                    <h4 class="font-serif" style="font-size: 1.2rem; color: #C59D52; margin-bottom: 0.5rem;">Our Goal</h4>
-                    <p>Build a proprietary, highly segmented donor database - critical for AI model effectiveness</p>
-                </div>
-                <div style="margin-bottom: 2rem;">
-                    <h4 class="font-serif" style="color: #C59D52; margin-bottom: 1rem; font-size: 1.2rem;">Data Sources</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-                            <span style="font-weight: 600; color: #C59D52;">Kansas Secretary of State</span>
-                            <span style="opacity: 0.75;">State-level candidate reports</span>
-                        </div>
-                        <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-                            <span style="font-weight: 600; color: #C59D52;">County Clerks</span>
-                            <span style="opacity: 0.75;">Local-level candidate reports</span>
-                        </div>
-                        <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-                            <span style="font-weight: 600; color: #C59D52;">Kansas Public Disclosure Commission</span>
-                            <span style="opacity: 0.75;">Comprehensive filing records</span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-serif" style="color: #C59D52; margin-bottom: 1rem; font-size: 1.2rem;">Collection Process</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <div style="padding: 0.75rem; border-radius: 0.5rem; background: rgba(30, 30, 30, 0.3); border-left: 2px solid rgba(197, 157, 82, 0.6);">
-                            <span style="font-weight: 600; color: #C59D52;">1.</span> Access public 'View Submitted Forms & Reports' portal
-                        </div>
-                        <div style="padding: 0.75rem; border-radius: 0.5rem; background: rgba(30, 30, 30, 0.3); border-left: 2px solid rgba(197, 157, 82, 0.6);">
-                            <span style="font-weight: 600; color: #C59D52;">2.</span> Systematically request digitized reports from County Clerks
-                        </div>
-                        <div style="padding: 0.75rem; border-radius: 0.5rem; background: rgba(30, 30, 30, 0.3); border-left: 2px solid rgba(197, 157, 82, 0.6);">
-                            <span style="font-weight: 600; color: #C59D52;">3.</span> Integrate with public voter registration records
-                        </div>
-                        <div style="padding: 0.75rem; border-radius: 0.5rem; background: rgba(30, 30, 30, 0.3); border-left: 2px solid rgba(197, 157, 82, 0.6);">
-                            <span style="font-weight: 600; color: #C59D52;">4.</span> Link donations to party affiliation and voting history
-                        </div>
-                    </div>
-                </div>
-                <p class="source text-right">Data architecture compliant with K.S.A. 25-4143 et seq.</p>
-            </div>
-
-            <div class="slide" data-slide="11">
-                <h2 class="slide-title font-serif animate-fadeIn">Target Client Overview</h2>
-                <p class="text-center" style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; opacity: 0.75;">2026 Election Cycle Focus</p>
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="card animate-slideUp" style="animation-delay: 0s;">
-                        <h4 class="font-serif" style="font-size: 1.3rem;">Federal</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• U.S. Senate: Roger Marshall (Incumbent)</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• U.S. House District 1: Tracey Mann</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• U.S. House District 2: Derek Schmidt</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• U.S. House District 4: Ron Estes</li>
-                        </ul>
-                    </div>
-                    <div class="card animate-slideUp" style="animation-delay: 0.15s;">
-                        <h4 class="font-serif" style="font-size: 1.3rem;">Statewide</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• Governor: Jeff Colyer, Ty Masterson, Scott Schwab, others</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• Secretary of State: Pat Proctor, Ken Rahjes</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• Other constitutional offices</li>
-                        </ul>
-                    </div>
-                    <div class="card animate-slideUp" style="animation-delay: 0.3s;">
-                        <h4 class="font-serif" style="font-size: 1.3rem;">Legislative & Local</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• State Senate districts statewide</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• State House districts statewide</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1rem; border-left: 2px solid rgba(112, 26, 23, 0.5);">• County and municipal races</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="source text-right">Client targets based on 2026 Kansas election filings</p>
-            </div>
-
-            <div class="slide" data-slide="12">
-                <div class="cover-content">
+            <div class="slide" data-slide="10"> <div class="cover-content">
                     <img src="https://i.ibb.co/nNfZHZc3/Untitled-design-2.png" alt="Logo" style="width: 200px; margin-bottom: 2rem;" class="animate-scaleIn">
                     <h3 class="font-serif animate-fadeIn" style="font-size: 3rem; color: #C59D52; margin-bottom: 2rem;">Ready to Win in 2026?</h3>
                     <div class="grid-2" style="width: 100%; margin-bottom: 2rem;">
@@ -1096,8 +1018,7 @@
                 <span>PREVIOUS</span>
             </button>
             <div class="slide-counter">
-                <span id="current-slide">1</span> / <span id="total-slides">13</span>
-            </div>
+                <span id="current-slide">1</span> / <span id="total-slides">13</span> </div>
             <button class="nav-button next" onclick="nextSlide()">
                 <span>NEXT</span>
                 <span>→</span>
@@ -1168,3 +1089,4 @@
     </script>
 </body>
 </html>
+```
